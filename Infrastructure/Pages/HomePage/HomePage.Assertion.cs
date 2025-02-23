@@ -6,7 +6,7 @@ namespace Infrastructure
     {
         public void AssertUserButtonHaveCorrectName(User user)
         {
-            Assert.AreEqual(user.Name.ToUpper(), usernameButton.Text, "Button is not correct");
+            Assert.AreEqual(user.Name.ToUpper(), UsernameButton.Text, "Button is not correct");
         }
     }
 }

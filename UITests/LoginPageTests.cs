@@ -1,5 +1,4 @@
 using Infrastructure;
-using OpenQA.Selenium;
 
 namespace UITests
 {
@@ -8,11 +7,21 @@ namespace UITests
         [Test]
         public void LoginPageNavigated_When_ClickSignInButton()
         {
-            var user = UserFactory.RegisteredUser();
-            IWebElement signInButton = Driver.FindElement(By.XPath("//button[./span[text()='Sign in']]"));
-            signInButton.Click();
+            HomePage.ClickSignInButton();
 
+            LoginPage.AssertTitle();
+        }
+
+        [Test]
+        public void LoginSuccessfully_When_SubmitValidCredentials()
+        {
+            var user = UserFactory.RegisteredUser();
+
+            LoginPage.Open();
             LoginPage.SubmitForm(user);
+
+            // TODO I.M.(2025.02.23) Remove the following step when fix wait for ajax
+            HomePage.ClickSignInButton();
 
             HomePage.AssertUserButtonHaveCorrectName(user);
         }

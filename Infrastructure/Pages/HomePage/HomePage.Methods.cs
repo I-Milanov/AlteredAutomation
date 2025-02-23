@@ -12,5 +12,11 @@ namespace Infrastructure
         public override string Url { get; } = "https://www.altered.gg/";
 
         public override string DomTitle { get; } = "Altered TCG - Explore the Unexpected";
+
+        public void ClickSignInButton()
+        {
+            SignInButton.Click();
+            WaitUntilPageLoaded();
+        }
     }
 }
