@@ -15,9 +15,17 @@ namespace Infrastructure.Pages
 
         protected IWebDriver Driver { get; set; }
 
+        protected IJavaScriptExecutor JavaScriptExecutor => Driver as IJavaScriptExecutor;
+
         public void Open()
         {
             Driver.Navigate().GoToUrl(Url);
+            WaitUntilReady();
+        }
+
+        protected virtual void WaitUntilReady()
+        {
+            Utilities.Wait.Until(() => JavaScriptExecutor.ExecuteScript("return document.readyState") == "complete");
         }
     }
 }
