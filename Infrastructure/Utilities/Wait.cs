@@ -4,10 +4,12 @@
     {
         public static void Until(
         Func<bool> condition,
-        int timeoutInSeconds = 10,
+        int? timeoutInSeconds = null,
         string exceptionMessage = "Timeout exceeded.",
         int retryRateDelay = 50)
         {
+            timeoutInSeconds ??= ConfigurationService.GetConfiguration().Timeout.UntilTotalTimeout;
+
             var start = DateTime.Now;
             while (!condition())
             {
