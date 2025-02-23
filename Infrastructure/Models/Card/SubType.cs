@@ -1,0 +1,41 @@
+﻿namespace Infrastructure.Models
+{
+    public enum SubType
+    {
+        Adventurer,
+        Animal,
+        Apprentice,
+        Artist,
+        Boon,
+        Bureaucrat,
+        Citizen,
+        Companion,
+        Conjuration,
+        Construction,
+        Deity,
+        Disruption,
+        Dragon,
+        Druid,
+        Elemental,
+        Engineer,
+        Fairy,
+        Gear,
+        Illusion,
+        Landmark,
+        Leviathan,
+        Mage,
+        Maneuver,
+        Messenger,
+        Noble,
+        Plant,
+        Robot,
+        Scholar,
+        Site,
+        Soldier,
+        Song,
+        Spirit,
+        Titan,
+        Trainer
+    }
+
+}
