@@ -23,6 +23,7 @@ namespace Infrastructure
         {
             FillForm(user);
             ContinueButton.Click();
+            WaitUntilPageLoaded();
         }
     }
 }
