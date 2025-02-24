@@ -6,11 +6,11 @@
         public Faction Faction { get; set; }
         public CardType Type { get; set; }
         public Rarity Rarity { get; set; }
-        public int HandCost { get; set; }
-        public int ReserveCost { get; set; }
-        public int ForestAttribute { get; set; }
-        public int MountainAttribute { get; set; }
-        public int WaterAttribute { get; set; }
+        public int? HandCost { get; set; }
+        public int? ReserveCost { get; set; }
+        public int? ForestAttribute { get; set; }
+        public int? MountainAttribute { get; set; }
+        public int? WaterAttribute { get; set; }
         public string MainEffect { get; set; }
         public List<SubType> SubTypes { get; set; } = new List<SubType>();
         public bool IsOutOfFaction { get; set; }
