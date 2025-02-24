@@ -1,4 +1,5 @@
 ﻿using Infrastructure;
+using Infrastructure.Models;
 using Infrastructure.Services;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -17,6 +18,8 @@ namespace UITests
 
         public HomePage HomePage => new HomePage(Driver);
 
+        public CardsPage CardsPage=> new CardsPage(Driver);
+
         public AppSettings AppSettings { get; set; }
 
         public BaseTests()
@@ -26,7 +29,7 @@ namespace UITests
 
 
         [OneTimeSetUp]
-        public void OneTimeSetup()
+        public virtual void OneTimeSetup()
         {
             InitializeWebDriver();
             HomePage.Open();
