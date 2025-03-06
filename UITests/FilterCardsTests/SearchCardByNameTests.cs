@@ -13,7 +13,7 @@ namespace UITests
                 .Select(card =>
                 {
                     var testCase = new TestCaseData(card);
-                    testCase.SetName($"{card.Name} cards were visible when filter by card name");
+                    testCase.SetName($"{card.Name} were visible when filter by card name only");
                     return testCase;
                 });
         }
